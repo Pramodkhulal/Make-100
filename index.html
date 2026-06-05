@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Make 100 – Solvable Number Puzzle</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="game-header">
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <h1><i class="fas fa-brain"></i> Make 100</h1>
+        <p>Use the 3 digits +, -, ×, ÷, ( ) to make exactly the target</p>
+        <div class="guarantee-badge">
+          <i class="fas fa-check-circle"></i> Every puzzle is solvable!
+        </div>
+      </div>
+
+      <div class="score-dashboard">
+        <div class="score-card">
+          <i class="fas fa-star"></i>
+          <div class="label">Score</div>
+          <div class="value" id="scoreValue">0</div>
+        </div>
+        <div class="score-card">
+          <i class="fas fa-history"></i>
+          <div class="label">Attempts</div>
+          <div class="value" id="attemptsValue">0</div>
+        </div>
+        <div class="score-card">
+          <i class="fas fa-trophy"></i>
+          <div class="label">Best Score</div>
+          <div class="value" id="bestScoreValue">0</div>
+        </div>
+      </div>
+
+      <div class="difficulty-section">
+        <div class="difficulty-buttons">
+          <button class="difficulty-btn" data-difficulty="easy">
+            Easy (50)
+          </button>
+          <button class="difficulty-btn active" data-difficulty="medium">
+            Medium (100)
+          </button>
+          <button class="difficulty-btn" data-difficulty="hard">
+            Hard (200)
+          </button>
+        </div>
+        <div class="target-display">
+          Target: <span id="targetValue">100</span>
+        </div>
+      </div>
+
+      <div class="numbers-display" id="numbersDisplay"></div>
+
+      <div class="timer-display" id="timerDisplay">00:00</div>
+
+      <div class="expression-section">
+        <input
+          type="text"
+          id="expressionInput"
+          class="expression-input"
+          placeholder="Enter expression e.g., (5+5)×10"
+          autocomplete="off"
+        />
+        <div class="input-hint">
+          <i class="fas fa-keyboard"></i> Press Enter to submit | Allowed: + - *
+          / ( )
+          <span style="margin-left: auto"
+            ><i class="fas fa-check-circle"></i> Guaranteed solvable!</span
+          >
+        </div>
+      </div>
+
+      <div class="message-area" id="messageArea"></div>
+
+      <div class="game-controls">
+        <button class="btn btn-primary" id="submitBtn">
+          <i class="fas fa-check"></i> Check
+        </button>
+        <button class="btn btn-secondary" id="newPuzzleBtn">
+          <i class="fas fa-dice-d6"></i> New Puzzle
+        </button>
+        <button class="btn btn-hint" id="hintBtn">
+          <i class="fas fa-lightbulb"></i> Hint
+        </button>
+        <button class="btn btn-danger" id="resetScoreBtn">
+          <i class="fas fa-undo"></i> Reset Score
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
